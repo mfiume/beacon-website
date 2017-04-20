@@ -1,6 +1,6 @@
-# DNAStack - Public Website
+# Beacon - Public Website
 
-The corporate web for the DNAstack company.
+The public website for the GA4GH Beacon Project.
 
 ## Installation guide
 
@@ -21,7 +21,7 @@ To build the project do:
 4. `$ gulp` - to actually build the project.
 
 To use the web page at your local machine, run the appropriate gulp target `$ gulp serve`. This will build the 
-project, start a [webserver](http://www.browsersync.io/docs/gulp/) (on localhost:3000), deploy the DNAstack web and 
+project, start a [webserver](http://www.browsersync.io/docs/gulp/) (on localhost:3000), deploy the website and
 open a browser window with the client. While the gulp target is running, the source files are 
 [watched](https://www.npmjs.com/package/gulp-watch) and after each change in any of the source files, the project is 
 rebuilt and the changes are propagated into the browser. No manual refresh of browser is needed.
