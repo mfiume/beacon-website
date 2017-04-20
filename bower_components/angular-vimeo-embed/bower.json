@@ -1,0 +1,33 @@
+{
+  "name": "angular-vimeo-embed",
+  "version": "0.1.2",
+  "authors": [
+    "Vincenzo Merolla <vincenzomerolla@aol.com>"
+  ],
+  "description": "A simple AngularJS directive to embed vimeo videos.",
+  "main": "dist/angular-vimeo-embed.min.js",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "directive",
+    "vimeo",
+    "embed",
+    "player"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    ".jshintrc",
+    ".gitignore",
+    ".editorconfig",
+    "package.json",
+    "gulpfile.js",
+    "src/demo/",
+    "src/index.html"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.24",
+    "angular-route": "~1.2.24"
+  }
+}

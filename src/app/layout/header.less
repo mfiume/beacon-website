@@ -1,0 +1,151 @@
+.navbar {
+  width: 100%;
+  background-color: white;
+  /* Placing the .navbar above sticky elements which handle their z-indexes internally. */
+  /* https://github.com/harm-less/angular-sticky/blob/01cb103444d3b0087bf8f507002ed4daa0ecd6df/js/angular-sticky.js#L30 */
+  z-index: 1040;
+
+  .navbar-nav {
+    > li {
+      > a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    background: inherit;
+    border-color: #202020;
+
+    ul {
+      margin: 0;
+      li {
+        -border-bottom: 1px solid #202020;
+      }
+    }
+  }
+
+  .navbar-brand {
+    height: auto;
+    padding: 10px 0 10px 0;
+  }
+
+  &.ds-scroll {
+
+    background-color: rgba(255,255,255,0.97);
+
+    a {
+      color: @brand-primary;
+
+      &:hover {
+        color: darken(@brand-primary, 20%);
+      }
+    }
+
+    li > a {
+
+      &:hover {
+        color: darken(@color-body-text, 10%);
+      }
+
+      &:focus {
+        color: @color-body-text;
+      }
+
+    }
+  }
+}
+
+.navbar-toggle {
+  margin-top: 12px;
+  .icon-bar {
+    background-color: @color-body-text;
+  }
+}
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+  .navbar-brand {
+    margin-left: 10px;
+  }
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .navbar {
+    background-color: white;
+
+    &.nav-up {
+      top: -71px;
+    }
+
+    &.navbar-default {
+      .navbar-brand {
+
+        .ds-logo {
+          transition: all 0.3s;
+          position: absolute;
+          left: 20px;
+        }
+      }
+    }
+
+    .navbar-collapse {
+      padding-right: 0px;
+      padding-left: 0px;
+
+      border-top: 1px solid @border-color;
+      ul {
+        li {
+          border-top: none;
+          border-bottom: 1px solid @border-color;
+        }
+      }
+    }
+
+    &.ds-scroll {
+      transition: all 0.3s;
+
+      .navbar-collapse {
+        ul {
+          li {
+            border-top: none;
+            border-bottom: 1px solid @border-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+.nav > li > a:hover, .nav > li > a:focus {
+
+  &.btn-primary:hover {
+    color: #fff;
+    background-color: #286090;
+  }
+}

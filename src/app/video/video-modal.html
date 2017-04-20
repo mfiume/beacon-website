@@ -1,0 +1,20 @@
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title">{{video.title}}</h3>
+  </div>
+  <div class="modal-body">
+    <vimeo-video class="embed-responsive embed-responsive-16by10"
+      player-id="video-player"
+      video-id="video.vimeoId"
+      player-opts="{ autoplay: 1, color: 'ffffff', title: 0, autopause: 0 }"
+      ></vimeo-video>
+  </div>
+  <div class="modal-footer">
+    <button
+            class="btn btn-primary"
+            type="button"
+            ng-click="video.cancel()">
+      OK
+    </button>
+  </div>
+</div>

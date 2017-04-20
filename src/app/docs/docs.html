@@ -1,0 +1,15 @@
+<div class="row dn-content  bn-hero-white">
+  <div hl-sticky offset-top="60" media-query="min-width: 768px" class="col-xs-12 bn-hero-gray b-b">
+    <div class="mx-width">
+      <ul class="nav navbar-nav font-thin">
+        <li ng-class="{active: $state.is('docs.tutorials')}">
+          <a href="#" ui-sref="docs.tutorials">Tutorials</a>
+        </li>
+        <li ng-class="{active: $state.is('docs.develop')}">
+          <a href="#" ui-sref="docs.develop">Developers</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div ui-view class="container-fluid"></div>
+</div>

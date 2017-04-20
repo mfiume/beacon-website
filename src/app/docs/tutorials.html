@@ -1,0 +1,28 @@
+<div class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 text-center">
+      <h2 class="h2 m-b-xl">Tutorials</h2>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <ul id="videoList">
+        <li ng-repeat="tutorial in tutorials.list | filter:tutorials.filter.filter">
+          <div class="row">
+            <div class="col-xs-2">
+            <a class="pull-right" ng-click="tutorials.watchVideo(tutorial.title,tutorial.videoId)">
+              <img height="50" src="assets/images/play.svg"/>
+            </a>
+          </div>
+            <div class="col-xs-10">
+              <div class="h4 m-t font-bold">{{tutorial.title}}</div>
+              <div class="text-muted">{{tutorial.description}}</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="text-center m-t-xl">
+        <a class="btn btn-primary"
+              href="mailto:support@dnastack.com"><i></i> Need Help?</a>
+      </div>
+    </div>
+  </div>
+</div>

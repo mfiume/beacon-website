@@ -1,0 +1,311 @@
+<div id="" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 col-md-8">
+      <div class="p-v-xl text-dark">
+        <div class="h2 m-b">Yes, it's <span class="text-primary">free</span></div>
+        <div class="font-thin text-muted m-t-xl">
+          Our mission is to make genomics broadly accessible. Our pricing is designed to provide
+          large and small organizations access to a cutting-edge genomics infrastructure
+          with no upfront investment and the most competitive pricing on the market.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 hidden-sm hidden-xs">
+      <img style="height:300px; margin-left: 100px"
+           class="pull-right"
+           src="assets/images/product/price-tag.svg">
+    </div>
+  </div>
+</div>
+
+<div hl-sticky offset-top="60" media-query="min-width: 768px">
+  <div class="row bn-hero-gray b-b">
+    <div class="mx-width clearfix">
+      <div class="col-xs-12">
+        <ul class="nav navbar-nav font-thin">
+          <li ng-class="{active: main.activeSection === 'ds-model'}">
+            <a href="#" scroll-to="ds-model" offset="{{screenWidth <= 768 ? 0 : 60}}"
+               callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+               ng-click="head.navCollapsed = true; main.activeSection = 'ds-model';">Pricing Model</a>
+          </li>
+          <li ng-class="{active: main.activeSection === 'ds-cloud-costs'}">
+            <a href="#" scroll-to="ds-cloud-costs" offset="{{screenWidth <= 768 ? 0 : 60 + 40}}"
+               callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+               ng-click="head.navCollapsed = true; main.activeSection = 'ds-cloud-costs';">Cloud Costs</a>
+          </li>
+          <li ng-class="{active: main.activeSection === 'ds-calculator'}">
+            <a href="#" scroll-to="ds-calculator" offset="{{screenWidth <= 768 ? 0 : 60}}"
+               callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+               ng-click="head.navCollapsed = true; main.activeSection = 'ds-calculator';">Cost Calculator</a>
+          </li>
+          <li ng-class="{active: main.activeSection === 'ds-methods'}">
+            <a href="#" scroll-to="ds-methods" offset="{{screenWidth <= 768 ? 0 : 60}}"
+               callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+               ng-click="head.navCollapsed = true; main.activeSection = 'ds-methods';">Payment Methods</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="ds-model" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 text-center">
+      <h2 class="h2 m-b-xl">Pricing Model</h2>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <p class="m-b-xl">
+          We believe that the best way to make genomics broadly accessible and impactful is to deliver a cutting edge
+          infrastructure at an afforable price. That's why our platform is free, and you only pay costs associated
+          with computation and storage in our cloud.
+        </p>
+      <div class="row m-b-xl">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-1 text-center m-b-lg">
+          <div class="m-b-lg">
+            <img src="assets/images/dnastack-logo-blue-gradient.svg" height="60"/>
+          </div>
+          Platform<br/>
+          <p class="font-bold">$0</p>
+        </div>
+        <div class="col-xs-12 col-sm-2 text-center m-b-lg" >
+          <div>
+            <img class="plus-sign" src="assets/images/product/plus.svg" height="30"/>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 text-center m-b-lg">
+          <div class="m-b-lg">
+            <img src="assets/images/product/noun_570257_cc.svg" height="60"/>
+          </div>
+          Cloud costs<br>
+          <p class="font-bold">
+          <a href="#" scroll-to="ds-cloud-costs" offset="{{screenWidth <= 768 ? 0 : 60}}"
+             callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+             ng-click="head.navCollapsed = true; main.activeSection = 'ds-cloud-costs';">pay-per-use <i class="fa fa-angle-double-down"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="text-center m-t-lg">
+        <button class="btn btn-primary" ng-click="pricing.subscribe()">Schedule a Demo</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ds-benefits" class="row bn-hero-white b-b" itemprop="description">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="hidden-sm hidden-xs col-md-6">
+      <div class="p-v-xl">
+        <img style="height:500px; margin-right: 100px"
+             class="pull-right"
+             src="assets/images/imac-screen.jpg">
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="row m-b-xl">
+        <div class="col-xs-12">
+          <h2 class="h2 m-b-lg text-dark">Stop building infrastructure, start doing science</h2>
+          <div>DNAstack is a managed platform that significantly
+            reduces the time and complexity of setting up a genomics
+            infrastructure, so you can focus on science.</div>
+        </div>
+      </div>
+      <div class="row m-b-xl" ng-init="shareClass='col-xs-12'">
+        <div ng-class="shareClass">
+          <ds-feature
+            feature-class="'fa fa-dollar text-primary'"
+            feature-name="'Reduce Costs'"
+            feature-description="'No upfront costs or personnel required. Pay only for what you need, when you need it, through a competitive pay-per-use pricing model that confers cost savings of the cloud to you directly.'"></ds-feature>
+        </div>
+        <div ng-class="shareClass">
+          <ds-feature
+            feature-class="'fa fa-long-arrow-up text-primary'"
+            feature-name="'Scale Dynamically'"
+            feature-description="'DNAstack scales computational and storage capacity on-demand. You\'ll never worry about infrastructure or resource optimization again.'"></ds-feature>
+        </div>
+        <div ng-class="shareClass">
+          <ds-feature
+            feature-class="'fa fa-cogs text-primary'" feature-name="'Be Compliant & Interoperable'"
+            feature-description="'DNAstack is compliant with technical, security, and regulatory standards defined by the Global Alliance for Genomics & Health.'"
+          </ds-feature>
+        </div>
+        <div ng-class="shareClass">
+          <ds-feature
+            feature-class="'fa fa-code text-primary'" feature-name="'Customize & Integrate'"
+            feature-description="'Need a custom workflow? Want to automate processing with your sequencer? We\'ll help you develop a customized solution that integrates with your existing operations.'"
+          </ds-feature>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ds-cloud-costs" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12">
+      <div class="row m-b-xl">
+        <div class="col-xs-12 text-center">
+          <h2 class="h2 m-b-lg">Cloud Costs</h2>
+        </div>
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <p class="text-center">
+            Approximate cloud costs for routine bioinformatics processes are shown below.
+          </p>
+        </div>
+      </div>
+      <div class="row m-b-xl">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Service</th>
+              <th>Cost*</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="row-section">
+              <td>Whole Exome</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Bioinformatics - BWA (v0.7.15) + GATK (v2.3.9-Lite)</td>
+              <td>~ ${{pricing.model.informatics.perExome | number : 0}}</td>
+            </tr>
+            <tr>
+              <td>Monthly Storage - FASTQ, BAM, and VCF</td>
+              <td>~ ${{pricing.model.storage.perExome * pricing.model.storagePerGbPerMonth | number : 2}}</td>
+            </tr>
+            <tr class="row-section">
+              <td>Whole Genome</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Bioinformatics - BWA (v0.7.15) + GATK (v2.3.9-Lite)</td>
+              <td>~ ${{pricing.model.informatics.perGenome | number : 0}}</td>
+            </tr>
+            <tr>
+              <td>Monthly Storage - FASTQ, BAM, and VCF</td>
+              <td>~ ${{pricing.model.storage.perGenome * pricing.model.storagePerGbPerMonth | number : 2}}</td>
+            </tr>
+            </tbody>
+          </table>
+          * Assumes 30X coverage of a typical human genome
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="text-center m-t-lg">
+        <button class="btn btn-primary" ng-click="pricing.subscribe()">Schedule a Demo</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ds-calculator" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12">
+      <div class="row m-b-xl">
+        <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+          <h2 class="h2 m-b-lg">Cost Calculator</h2>
+          <p>Use the calculator to estimate the cloud costs associated with bioinformatics and monthly storage</p>
+        </div>
+      </div>
+      <div class="row m-b-xl">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <form name="calculatorForm">
+            <table class="table">
+              <tbody>
+              <tr>
+                <td>Number of exomes<br><span class="font-xs">~$1 per exome</span></td>
+                <td ng-class="{'has-error': calculatorForm.exomes.$error.number || calculatorForm.exomes.$error.required || calculatorForm.exomes.$error.min}" class="text-right">
+                  <input class="text-center form-control input-sm calculator-input"
+                         type="number" ng-model="pricing.calculator.numExomes" name="exomes"
+                         min="0" required>
+                  <span ng-show="calculatorForm.exomes.$error.number || calculatorForm.exomes.$error.required || calculatorForm.exomes.$error.min"
+                        class="help-block small m-b-none">A valid number is required</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Number of genomes<br><span class="font-xs">~$10 per genome</span></td>
+                <td ng-class="{'has-error': calculatorForm.genomes.$error.number || calculatorForm.genomes.$error.required || calculatorForm.genomes.$error.min}" class="text-right">
+                  <input class="text-center form-control input-sm calculator-input"
+                         type="number" ng-model="pricing.calculator.numGenomes" name="genomes"
+                         min="0" required>
+                  <span ng-show="calculatorForm.genomes.$error.number || calculatorForm.genomes.$error.required || calculatorForm.genomes.$error.min"
+                        class="help-block small m-b-none">A valid number is required</span>
+                </td>
+              </tr>
+              <tr class="table-b-b-2">
+                <td>Include storage?<br><span class="font-xs">${{pricing.model.storagePerGbPerMonth}} per GB per month</span></td>
+                <td class="text-right">
+                  <switch ng-model="pricing.calculator.includeStorage"></switch>
+                </td>
+              </tr>
+              <tr ng-if="pricing.calculator.includeStorage" class="b-n">
+                <th>Bioinformatics Total</th>
+                <th class="text-right">${{pricing.calculator.numExomes * pricing.model.informatics.perExome + pricing.calculator.numGenomes * pricing.model.informatics.perGenome  | number : 2 }}</th>
+              </tr>
+              <tr ng-if="pricing.calculator.includeStorage" class="table-b-b-2">
+                <th>Monthly Storage Total**<br><span class="font-xs font-thin">~{{pricing.model.storage.perExome}}GB per exome; ~{{pricing.model.storage.perGenome}}GB per genome</span></th>
+                <th class="text-right">${{(pricing.calculator.numExomes * pricing.model.storage.perExome + pricing.calculator.numGenomes * pricing.model.storage.perGenome) * pricing.model.storagePerGbPerMonth | number : 2  }}</th>
+              </tr>
+              <tr>
+                <th>Total*
+                </th>
+                <th class="text-right">${{
+                  (pricing.calculator.numExomes * pricing.model.informatics.perExome + pricing.calculator.numGenomes * pricing.model.informatics.perGenome)
+                  + (pricing.calculator.includeStorage ? ((pricing.calculator.numExomes * pricing.model.storage.perExome + pricing.calculator.numGenomes * pricing.model.storage.perGenome) * pricing.model.storagePerGbPerMonth) : 0)  | number : 2 }}</th>
+                </tr>
+            </tbody>
+          </table>
+        </form>
+        <p>* Assumes 30X coverage of a typical human genome</p>
+          <p ng-if="pricing.calculator.includeStorage">** Recurring, billed monthly</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="text-center m-t-lg">
+        <button class="btn btn-primary" ng-click="pricing.subscribe()">Schedule a Demo</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ds-methods" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 text-center">
+      <h2 class="h2 m-b-xl">Payment Methods</h2>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <p class="m-b-xl text-center">
+        Invoices issued monthly. The following payment methods are accepted:
+      </p>
+      <div class="row m-b-xl">
+        <div class="col-xs-12 col-sm-3 col-sm-offset-2 text-center m-b-lg">
+          <div class="m-b-lg">
+            <img src="assets/images/product/cc.svg" height="80"/>
+          </div>
+          Credit Card<br/>
+          <div class="font-xl">
+            <i class="fa fa-cc-visa"></i><i class="fa fa-cc-mastercard m-l-lg"></i><i class="fa fa-cc-amex m-l-lg"></i>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-sm-offset-2 text-center m-b-lg">
+          <div class="m-b-lg">
+            <img src="assets/images/product/cheque.svg" height="80"/>
+          </div>
+          Cheque<br>
+        </div>
+      </div>
+      <p class="m-b-xl text-center">
+        All prices in USD.
+      </p>
+    </div>
+    <div class="col-xs-12">
+      <div class="text-center m-t-lg">
+        <button class="btn btn-primary" ng-click="pricing.subscribe()">Schedule a Demo</button>
+      </div>
+    </div>
+  </div>
+</div>

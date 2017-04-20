@@ -1,0 +1,101 @@
+<div ng-controller="MailchimpSubscriptionCtrl">
+  <div class="modal-header">
+    <h3 class="modal-title">Schedule a Demo</h3>
+  </div>
+  <div class="modal-body">
+    <form name="MailchimpSubscriptionForm" novalidate>
+      <div ng-hide="mailchimp.result === 'success'">
+        <input class="hidden" type="hidden" ng-model="mailchimp.username" ng-init="mailchimp.username='dnastack'">
+        <input class="hidden" type="hidden" ng-model="mailchimp.dc" ng-init="mailchimp.dc='us8'">
+        <input class="hidden" type="hidden" ng-model="mailchimp.u" ng-init="mailchimp.u='0f199ddc24d069f74451f5cd9'">
+        <input class="hidden" type="hidden" ng-model="mailchimp.id" ng-init="mailchimp.id='dd02a4c2f1'">
+
+        <div class="form-group"
+             ng-class="{'has-error':MailchimpSubscriptionForm.title.$invalid && MailchimpSubscriptionForm.title.$touched}">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="title"
+                 ng-model="mailchimp.TITLE"
+                 placeholder="">
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error':MailchimpSubscriptionForm.fname.$invalid && MailchimpSubscriptionForm.fname.$touched}">
+          <label for="fname">First name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="fname" name="fname" required
+                 ng-model="mailchimp.FNAME"
+                 placeholder="">
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error':MailchimpSubscriptionForm.lname.$invalid && MailchimpSubscriptionForm.lname.$touched}">
+          <label for="lname">Last name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="lname" name="lname" required
+                 ng-model="mailchimp.LNAME"
+                 placeholder="">
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error':MailchimpSubscriptionForm.email.$invalid && MailchimpSubscriptionForm.email.$touched}">
+          <label for="email">Email address <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="email" name="email" required
+                 ng-model="mailchimp.EMAIL"
+                 placeholder=""
+                 ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i">
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error':MailchimpSubscriptionForm.organization.$invalid && MailchimpSubscriptionForm.organization.$touched}">
+          <label for="organization">Organization <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="organization" name="organization" required
+                 ng-model="mailchimp.ORG"
+                 placeholder="">
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error':MailchimpSubscriptionForm.datadesc.$invalid && MailchimpSubscriptionForm.datadesc.$touched}">
+          <label for="datadesc">Description of data</label>
+          <textarea type="text" class="form-control" id="datadesc" name="datadesc" rows="3"
+                 ng-model="mailchimp.DATADESC"
+                 placeholder="E.g. scope (whole genome or exome), species (human or non-human), number of samples, sequencing platform, data types (FASTQ, BAM, VCF) ..."></textarea>
+        </div>
+      </div>
+
+      <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->
+      <div ng-show="mailchimp.result === 'error'" ng-cloak>
+        <span ng-bind-html="mailchimp.errorMessage"></span>
+      </div>
+
+      <!-- Show success message if MailChimp returned successfully. -->
+      <div ng-show="mailchimp.result === 'success'" ng-cloak>
+        <span ng-bind-html="mailchimp.successMessage"></span>
+      </div>
+    </form>
+    <p style="font-size: 12px">
+      By sending us your contact information, you agree to be contacted by DNAstack with information on new products
+      and services or upcoming events. If you do not wish to receive e-mail from us, you can unsubscribe by clicking
+      the "unsubscribe" link at the bottom of any communication.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <p class="pull-left text-danger" ng-hide="mailchimp.result === 'success'">* required fields</p>
+    <button ng-hide="mailchimp.result === 'success'"
+            class="btn btn-primary"
+            type="button"
+            ng-disabled="MailchimpSubscriptionForm.$invalid || mail.isSubscribing"
+            ng-click="mail.dsSubscribe() && addSubscription(mailchimp)">
+      Send
+    </button>
+    <button ng-hide="mailchimp.result !== 'success'"
+            class="btn btn-primary"
+            type="button"
+            ng-click="mail.cancel()">
+      OK
+    </button>
+    <button ng-hide="mailchimp.result === 'success'"
+            class="btn btn-default"
+            type="button"
+            ng-click="mail.cancel()">
+      Cancel
+    </button>
+  </div>
+</div>

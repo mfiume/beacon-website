@@ -1,0 +1,158 @@
+<div id="ds-overview" class="row b-b">
+  <div class="mx-width clearfix">
+    <div class="col-md-3 hidden-sm hidden-xs">
+      <img style="max-height:380px; margin-top:40px; margin-right:-20px"
+           class="pull-right"
+           src="assets/images/sequencer-stylized.jpg">
+    </div>
+    <div class="col-xs-12 col-md-6 p-v-xxl">
+      <div class="p-v-xl text-center">
+        <h2 class="h2 m-b-lg">From sequencer to scientist</h2>
+        <p>DNAstack is a managed, end-to-end solution for genomic data analysis and exploration.</p>
+        <a class="m-t-lg btn btn-default m-b-lg" ng-click="overview.watchVideo('Product Video',165449312)"><span
+          class="fa fa-play"></span> All Demos</a>
+      </div>
+    </div>
+    <div class="col-md-3 hidden-sm hidden-xs">
+      <img style="margin-top: 70px; margin-bottom: 50px; max-height:370px; margin-left:20px"
+           class="pull-left"
+           src="assets/images/imac-screen.jpg">
+    </div>
+  </div>
+</div>
+
+<div id="ds-overview-flow" class="row b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 col-md-6 col-md-offset-6">
+      <div class="streamline m-b-xl">
+        <div class="sl-item b-success b-l">
+          <div class="m-l-xl m-b-xxl">
+            <h3 class="h3 m-b-lg">Upload</h3>
+            <p>
+              Upload large or small datasets through a simple
+              and fast drag and drop uploader. FASTQ, BAM/CRAM, and VCF file
+              file formats are supported for sequence, alignment, and variant call
+              data, respectively.
+            </p>
+            <a class="btn btn-default" ng-click="overview.watchVideo('Importing Data',165314737)"><span
+              class="fa fa-play"></span> Demo</a>
+          </div>
+        </div>
+        <div class="sl-item b-success b-l hidden">
+          <div class="m-l-xl m-b-xxl">
+            <h3 class="h3 m-b-lg">Store</h3>
+            <p>
+              Datasets are stored in an infinitely scalable, secure cloud environment.
+              We use industry standard encryption protocols for
+              data at rest and in flight.
+            </p>
+          </div>
+        </div>
+        <div class="sl-item b-success b-l">
+          <div class="m-l-xl m-b-xxl">
+            <h3 class="h3 m-b-lg">Process</h3>
+            <p>
+              Execute state-of-the-art bioinformatics pipelines, to convert raw sequence data into
+              a list of genetic mutations from sequenced samples. DNAstack executes read alignment with
+              <a href="http://bio-bwa.sourceforge.net/">BWA</a> and variant calling with <a href="https://www.broadinstitute.org/gatk/">GATK</a>.
+            </p>
+            <a class="btn btn-default" ng-click="overview.watchVideo('Bioinformatics Processing',165308982)"><span
+              class="fa fa-play"></span> Demo</a>
+          </div>
+        </div>
+        <div class="sl-item b-success b-l">
+          <div class="m-l-xl m-b-xxl">
+            <div class="m-b-lg">
+              <h3 class="h3 inline">Search</h3>
+              <div class="label label-primary">coming soon</div>
+            </div>
+            <p>
+              Search through massive amounts of genetic variants using a high-performance faceted
+              search engine which combines genotype, annotation, and patient characteristics.
+            </p>
+          </div>
+        </div>
+        <div class="sl-item b-primary b-n">
+          <div class="m-l-xl m-b-xl">
+            <h3 class="h3 m-b-lg">Share</h3>
+            <p>
+              Selectively share genetic variant information through standard protocols developed by
+              the <a href="http://genomicsandhealth.org">Global Alliance for Genomics & Health</a>, like Beacon. Easily subscribe datasets to
+              be discoverable through the <a href="http://www.beacon-network.org">Beacon Network</a>.
+            </p>
+            <a class="btn btn-default" ng-click="overview.watchVideo('Sharing Genomic Datasets',165321377)"><span
+              class="fa fa-play"></span> Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="text-center">
+        <button class="btn btn-primary" ng-click="overview.subscribe()">Schedule a Demo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ds-overview-develop" class="row b-b dn-hero dn-develop">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+      <h2 class="h2 m-b-lg">Develop</h2>
+      <p>
+        All features of DNAstack are available through a REST API. Bindings to common programmaing languages like
+        Java make developing powerful applications and custom integrations simple.
+      </p>
+      <a class="btn btn-default"
+         ng-click="overview.watchVideo('Developing with Java Client Library',165322759)"><span
+        class="fa fa-play"></span> Demo</a>
+    </div>
+  </div>
+</div>
+
+<div id="ds-overview-features" class="row b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+      <h2 class="h2 m-b-lg">Next-generation genomics, now</h2>
+      <p>
+        DNAstack is developed using the latest standards, algorithms, and technologies, with the future of genomics in mind.
+      </p>
+    </div>
+    <div class="col-xs-12">
+      <div class="row m-b-xl" ng-init="shareClass='col-xs-12 col-md-6'">
+        <div ng-class="shareClass">
+          <ds-feature feature-class="'fa fa-flash text-primary'"  feature-name="'Cutting Edge'"
+                      feature-description="'Perform genomics analyses using the latest tools and technologies that deliver highest accuracy and performance.'"></ds-feature>
+        </div>
+        <div ng-class="shareClass">
+          <ds-feature feature-class="'fa fa-expand text-primary'"  feature-name="'Scalable'"
+                      feature-description="'Dynamically and transparently scale up resources with no idle time or technical, management, or maintenance burden. Worry less about process and more about science.'"></ds-feature>
+        </div>
+        <div ng-class="shareClass">
+          <ds-feature feature-class="'fa fa-dollar text-primary'"  feature-name="'Efficient'"
+                      feature-description="'Managed solution requires no upfront investment in hardware or IT management. Pay only for the resources you use, when you need them.'"></ds-feature>
+        </div>
+        <div ng-class="shareClass">
+          <ds-feature
+            feature-class="'fa  fa-check-square-o text-primary'" feature-name="'Compliant'"
+            feature-description="'DNAstack is compliant technical, security, and regulatory standards defined by the Global Alliance for Genomics & Health.'"></ds-feature>
+        </div>
+
+        <div ng-class="shareClass">
+          <ds-feature feature-class="'fa fa-hand-o-right text-primary'"  feature-name="'Simple'"
+                      feature-description="'Completely manage your genomics projects through a simple, interactive, and beautiful user interface. No bioinformatics or computational expertise required.'"></ds-feature>
+        </div>
+
+        <div ng-class="shareClass">
+          <ds-feature feature-class="'fa fa-share-alt text-primary'"  feature-name="'Collaborative'"
+                      feature-description="'Organize your team members and datasets in collaborative projects. Share datasets using standard APIs, through configurable public or private data sharing networks.'"></ds-feature>
+        </div>
+
+        <div ng-class="shareClass">
+          <ds-feature
+            feature-class="'fa fa-code text-primary'" feature-name="'Extensible'"
+                      feature-description="'DNAstack is programmatically accessible through a REST API. Client libraries for popular programming lanaguages like Java make developing applications or integrations easy.'"></ds-feature>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

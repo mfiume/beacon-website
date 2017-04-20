@@ -1,0 +1,17 @@
+<div class="p-v-lg m-t-lg m-b-lg" style="display: flex;">
+  <div class="m-r-lg" style="flex: 0 0 35px;">
+    <span ng-if="featureClass" style="font-size: 28px" class="{{featureClass}}"></span>
+    <img ng-if="featureImgSrc" width="35" style="-webkit-filter: invert(90%); filter: invert(90%);" src="{{featureImgSrc}}"/>
+  </div>
+  <div style="flex: 1;">
+    <div class="m-b-lg">
+      <div class="h4 m-t font-bold">{{featureName}}</div>
+    </div>
+    <p>
+      {{featureDescription}}
+    </p>
+    <div>
+      <ng-transclude></ng-transclude>
+    </div>
+  </div>
+</div>

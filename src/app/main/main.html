@@ -1,0 +1,111 @@
+
+<div itemscope itemtype="http://schema.org/Product">
+
+  <div id="ds-banner" class="row dn-content dn-hero bn-hero-white b-b">
+    <div class="mx-width clearfix">
+      <div class="col-xs-12 col-md-9">
+        <div class="p-v-xxxl text-dark">
+          <div class="h2 m-b">Beacon </div>
+          <div class="h3 font-thin m-t-xl">
+            Beacon is an open standard for genomics data discovery, developed by members of the <a href="http://genomicsandhealth.org">Global Alliance for Genomics & Health</a>
+          </div>
+          <div class="m-t-xl">
+            <a href="http://beacon-network.org" class="btn btn-primary m-t-xl">Search Beacons</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 hidden-sm hidden-xs p-v-xl">
+        <img style="max-height:400px; position:absolute; top:100px; right: 0px"
+             class="pull-left"
+             src="assets/images/beacon-logo.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ds-beacon-network" class="row bn-search-panel bn-hero-white b-t b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 ">
+      <h2 class="h2 m-b-xl">Search a global network for genetic variants of interest.</h2>
+      <form role="form" name="searchform" class="form-validation form-horizontal" ng-submit="main.searchBeacons()" novalidate>
+        <div class="form-group bn-coordinates hidden-xs "
+             ng-class="{'has-error': searchform.$invalid && !searchform.$pristine }">
+          <div class="col-sm-12">
+            <div class="input-group">
+              <div class="input-group-btn dropdown" dropdown="">
+                <button type="button"
+                        class="btn btn-default input-lg b-r-n"
+                        style="font-size: 18px"
+                        dropdown-toggle="">
+                  {{main.assembly || ''}} <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                  <li ng-repeat="assembly in main.assemblies" role="menuitem">
+                    <a ng-click="main.query.rs = assembly" href="">{{assembly}}</a></li>
+                </ul>
+              </div>
+              <input bn-genome-coordinate
+                     placeholder="e.g. 1 : 100,000 A>C"
+                     ng-model="main.coordinates"
+                     name="coordinates"
+                     class="form-control input-lg">
+
+              <div class="input-group-btn">
+                <button class="btn btn-lg" style="opacity:1.0;"
+                        ng-class="!searchform.$valid ? 'btn-disabled' : 'btn-success'"
+                        type="submit"
+                        ng-disabled="!searchform.$valid">
+                  <div>Search</div>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form>
+      <div>
+        Example: <a class="query-example font-bold" href="" ng-click="main.searchBRCA2Variant()">BRCA2 Variant</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ds-press" class="row bn-hero-white">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12">
+      <h2 class="h2 p-v-xl">
+        News
+      </h2>
+    </div>
+    <div class="col-xs-12">
+      <div class="row m-t-lg">
+        <div class="col-xs-12 col-sm-4" style="margin-bottom: 30px" ng-repeat="story in main.stories">
+          <div class="b-a bg-light" style="padding:20px; height:200px;">
+            <a href="{{story.url}}" ng-init="newsLogoHeight='30px'">
+              <div class="text-center m-b" style="height:65px">
+                <img class="m-b-lg v-align" ng-src="{{story.imgsrc}}" style="max-width:100%;" height="{{story.imgheight ? story.imgheight : newsLogoHeight}}"/>
+              </div>
+              <div class="font-lg italic m-b-lg text-ellipsize">{{story.title}}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ds-partners" class="row b-t">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 text-center" ng-init="logoHeight='60px'">
+      <h2 class="h2 p-v-lg">
+        Partners
+      </h2>
+      <div>
+        We're proud to partner with these and other industry-leading organizations
+      </div>
+      <div class="ds-partner p-v inline" ng-repeat="partner in main.partners">
+        <a href="{{partner.url}}">
+          <img
+            style="margin:20px; -webkit-filter: grayscale(1) invert(1); filter: grayscale(1) invert(1);"
+            class="m-a" ng-src="{{partner.logoSrc}}" ng-style="{height:logoHeight}"/>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

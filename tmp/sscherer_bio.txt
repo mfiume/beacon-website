@@ -1,0 +1,13 @@
+<h4 class="h4 font-bold text-primary ">Stephen Scherer, PhD.</h4>
+
+<p class="font-bold text-muted m-b hidden">Scientific Advisor</p>
+
+<p class="hidden">
+  Stephen is a world-class scientist renown for discoveries in genetic variation and understanding
+  their to autism and other disorders. He is Director of The Centre for Applied Genomics at the
+  Hospital for Sick Children and Professor of Medicine at University of Toronto. Moreover, as Director
+  for the
+  MSSNG Project, which intends to sequence and share data collected from 10,000 families affected by
+  autism,
+  Stephen is a pioneer in open genomics.
+</p>

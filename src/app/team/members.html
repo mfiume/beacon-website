@@ -1,0 +1,39 @@
+<div class="row bn-hero-white b-b">
+  <div class="mx-width clearfix" id="members-container">
+    <div class="col-sm-4 hidden-xs">
+      <div hl-sticky container="members-container" offset-top="20">
+        <div class="h4">Team Members</div>
+        <ul class="nav">
+          <li ng-repeat="member in members.members" ng-class="{active: member.id === members.activeMemberId}">
+            <a scroll-to="{{member.id}}" offset="140" ng-click="members.activeMemberId = member.id">{{member.name}}</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-sm-8 p-v-xl">
+      <div ng-repeat="member in members.members" id="{{member.id}}" class="ds-member m-b-xxl"
+           style="display: flex"
+           itemprop="employee" itemscope itemtype="http://schema.org/Person">
+        <img style="flex: 0 0 150px;" ng-src="{{member.imageSrc}}" class="member-photo hidden-xs"
+             alt="Photo of {{member.name}}"
+             itemprop="image">
+        <div style="flex: 1;" class="m-l-xl">
+          <div>
+            <div class="h2 inline" itemprop="name">{{member.name}}</div>
+            <div class="h4 inline m-l">{{member.credentials}}</div>
+          </div>
+          <div class="h4 font-thin text-primary" itemprop="jobTitle">{{member.title}}</div>
+          <div ng-repeat="paragraph in member.description">
+            <p itemprop="description">{{paragraph}}</p>
+          </div>
+          <div>
+            <a ng-if="member.linkedIn" href="{{member.linkedIn}}"><span class="fa fa-linkedin"></span></a>
+
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
