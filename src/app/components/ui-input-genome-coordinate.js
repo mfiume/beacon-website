@@ -30,7 +30,7 @@
         }
 
         function matchGenomicCoordinates(genomicCoordinates) {
-          var regex = /^\s*(\w+)\s*:\s*(.*)\s+(\w+)\s*>\s*(\w+)\s*$/g;
+          var regex = /^\s*(\w+)\s*\:\s*(.*)\s+(\w+)\s*\>\s*(\w+)\s*$/g;
           return regex.exec(genomicCoordinates);
         }
 

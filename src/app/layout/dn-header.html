@@ -23,16 +23,22 @@
     <div class="collapse navbar-collapse" collapse="head.navCollapsed || !motionState.isUp">
       <ul class="nav navbar-nav navbar-right font-thin">
         <li>
-          <a ui-sref="platform.pricing" ng-click="head.navCollapsed = true">About</a>
+          <a ui-sref="overview" ng-click="head.navCollapsed = true">Overview</a>
         </li>
         <li>
-          <a ui-sref="team.mission" ng-click="head.navCollapsed = true">Developers</a>
+          <a ui-sref="team.info" ng-click="head.navCollapsed = true">Team</a>
         </li>
         <li>
-          <a ui-sref="contact" ng-click="head.navCollapsed = true">Team</a>
+          <a ui-sref="dev.objective" ng-click="head.navCollapsed = true">Developers</a>
         </li>
         <li>
-          <a class="font-bold" target="_blank" href="https://beacon-network.org">Search Beacons</a>
+          <a ui-sref="faq" ng-click="head.navCollapsed = true">FAQ</a>
+        </li>
+        <li>
+          <a ui-sref="info" ng-click="head.navCollapsed = true">News</a>
+        </li>
+          <li>
+          <a ui-sref="contact" ng-click="head.navCollapsed = true">Contact</a>
         </li>
       </ul>
     </div>

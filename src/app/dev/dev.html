@@ -1,0 +1,21 @@
+<div id="ds-dev" class="row dn-content  bn-hero-white">
+  <div hl-sticky offset-top="20" media-query="min-width: 768px" class="col-xs-12 bn-hero-gray b-b">
+    <div class="mx-width">
+      <ul class="nav navbar-nav  font-thin">
+        <li ng-class="{active: $state.is('dev.mission')}">
+          <a href="#" ui-sref="dev.objective">Objective</a>
+        </li>
+        <li ng-class="{active: $state.is('dev.deployment')}">
+          <a href="#" ui-sref="dev.deployment"> Deployment</a>
+        </li>
+        <li ng-class="{active: $state.is('dev.network')}">
+          <a href="#" ui-sref="dev.network"> Network </a>
+        </li>
+        <li ng-class="{active: $state.is('dev.tech')}">
+          <a href="#" ui-sref="dev.tech"> Evolutions   </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div ui-view class="container-fluid"></div>
+</div>

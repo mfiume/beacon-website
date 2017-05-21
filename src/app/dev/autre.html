@@ -1,0 +1,34 @@
+
+<div class="row bn-hero-white b-b">
+    <div class="col-xs-12 col-sm-8 p-v-xl">
+
+      <div ng-repeat="member in autre.lesmembres" id="{{member.id}}" class="ds-member m-b-xxl" style="display: flex" itemprop="employee" itemscope itemtype="http://schema.org/Person">
+        <img style="flex: 0 0 150px;" ng-src="{{member.imageSrc}}" class="member-photo hidden-xs" alt="Photo of {{member.name}}" itemprop="image">
+        <div style="flex: 1;" class="m-l-xl">
+          <div>
+            <div class="h2 inline" itemprop="name">{{member.name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ds-press" class="row bn-hero-white">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12">
+      <div class="row m-t-lg">
+        <div class="col-xs-12 col-sm-4" style="margin-bottom: 30px" ng-repeat="story in autre.news">
+          <div class="b-a bg-light" style="padding:20px; height:200px;">
+            <a href="{{story.url}}" ng-init="newsLogoHeight='30px'">
+              <div class="text-center m-b" style="height:65px">
+                <img class="m-b-lg v-align" ng-src="{{story.imgsrc}}" style="max-width:100%;" height="{{story.imgheight ? story.imgheight : newsLogoHeight}}"/>
+              </div>
+              <div class="font-lg italic m-b-lg text-ellipsize">{{story.title}}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

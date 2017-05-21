@@ -1,0 +1,224 @@
+<div class="row bn-hero-white b-b">
+  <div class="mx-width clearfix">
+    <div class="col-xs-12 col-md-8 p-v-xl">
+      <div class="h2 m-t m-b-xl">
+        Life's short. Do stuff that matters.
+      </div>
+      <p class="m-b">We're a team of software engineers, machine learning researchers, and geneticists
+        building a solution that will accelerate discoveries in genomics and benefit human health.
+        We're looking for talented people to join our team. </p>
+
+      <p class="m-b-xl">
+        Experience in genomics or life sciences is <i>not</i> required. Current open positions are listed below.
+      </p>
+
+      <div class="h4 font-bold m-b">Full-time Positions</div>
+        <span ng-init="job1visible = false; job2visible = false; job3visible = false; job4visible = false">
+          <!-- Backend position -->
+          <div class="m-b" itemscope itemtype="http://schema.org/JobPosting">
+            <div class="h4 text-primary"
+                 itemprop="title"></i><a href="" ng-click="job1visible = !job1visible"><i class="fa"
+                                                                                                 ng-class="job1visible ? 'fa-caret-down' : 'fa-caret-right'"></i>
+              Software Engineer (Backend)</a></div>
+            <div ng-if="job1visible">
+              <p class="font-bold m-t">Job Description</p>
+
+              <p itemprop="description">DNAstack is looking for an experienced software engineer to join an energetic and growing team of
+                scientists and engineers focused on delivering an easy-to-use platform to store, query, and visualize
+                very
+                large (petabyte) datasets of genetic variants. While the primary responsibilities for this position
+                comprise the development of robust and secure software, implementing new features and functionality,
+                and
+                evolving our existing architecture, you will also be involved in client meetings, developing
+                specifications, and conducting demonstrations.
+              </p>
+
+              <p class="font-bold m-t">Required Experience</p>
+              <ul class="list-circle" itemprop="experienceRequirements">
+                <li>Undergraduate or graduate (preferred) degree in computer science, computer engineering, or
+                  bioinformatics.
+                </li>
+                <li>3+ years of software development experience in Java (preferred).</li>
+                <li>Familiarity with principles of software engineering, and common design patterns.</li>
+                <li>Experienced with SQL, and configuring and running a DBMS (MySQL preferred) for development.</li>
+                <li>Proficiency using Git for version control.</li>
+              </ul>
+              <p class="font-bold m-t">Desired Experience</p>
+              <ul class="list-circle" itemprop="experienceRequirements">
+                <li>Experienced writing parallelized, cloud-based software that operates on very large datasets, using
+                  technologies including Google BigQuery, App Engine, and Apache Hadoop.
+                </li>
+                <li>Proficient with AngularJS, JavaScript, and HTML5, to assist our UI/UX designers in delivering a
+                  fast and responsive user experience.
+                </li>
+                <li>Knowledge in any of the following areas would be considered an asset for this position:
+                  statistics,
+                  R, machine learning, human genetics or genomics, computational biology or bioinformatics,
+                  preparation
+                  of patent applications, mobile application development (Android or IOS)
+                </li>
+                <li>In addition, this position may occasionally require working with tools written in languages such
+                  as
+                  Perl, Python, or C/C++.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Frontend position -->
+          <div class="m-b" itemscope itemtype="http://schema.org/JobPosting">
+            <div class="h4 text-primary"
+                 itemprop="title"></i><a href="" ng-click="job2visible = !job2visible"><i class="fa"
+                                                                                                 ng-class="job2visible ? 'fa-caret-down' : 'fa-caret-right'"></i>
+              Software Engineer (Frontend)</a></div>
+            <div ng-if="job2visible">
+              <p class="font-bold m-t">Job Description</p>
+
+              <p itemprop="description">
+                DNAstack is looking for an experienced software developer to join an energetic and growing team of
+                scientists and engineers focused on delivering an easy-to-use platform to store, query, and visualize
+                very large (petabyte) datasets of genetic variants. The primary responsibilities for this position
+                may include: implementing UI components using AngularJS in communication with a RESTful API,
+                designing and skinning new UI components, and implementing interactive visualizations that illustrate
+                genetic data.
+              </p>
+
+              <p class="font-bold m-t">Required Experience</p>
+              <ul class="list-circle" itemprop="experienceRequirements">
+                <li>Bachelors or masters (preferred) degree in computer science, or computer engineering. (3rd or 4th
+                  year).
+                </li>
+                <li>3+ years of experience with HTML, CSS and Javascript, expert understanding of AngularJS.</li>
+                <li>Understanding of client-side routing, CSS preprocessors (LESS, Sass), HTML5 and responsive
+                  design.
+                </li>
+                <li>Familiarity with principles of software engineering, and common design patterns.</li>
+                <li>Experience working with test driven development and testing frameworks.</li>
+                <li>Experience with RESTful API integration.</li>
+                <li>Proficiency using Git for version control.</li>
+              </ul>
+              <p class="font-bold m-t">Desired Experience</p>
+              <ul class="list-circle" itemprop="experienceRequirements">
+                <li>Experience with visualization libraries (e.g. D3, Processing.js, Raphaël)</li>
+                <li>UI and UX design experience will be considered strong assets.</li>
+              </ul>
+            </div>
+          </div >
+
+          <!-- Machine learning -->
+          <div class="m-b" itemscope itemtype="http://schema.org/JobPosting">
+            <div class="h4 text-primary"
+                 itemprop="title"></i><a href="" ng-click="job3visible = !job3visible"><i class="fa"
+                                                                                                 ng-class="job3visible ? 'fa-caret-down' : 'fa-caret-right'"></i>
+              Machine Learning Researcher</a></div>
+            <div ng-if="job3visible">
+              <p class="font-bold m-t">Job Description</p>
+
+              <p itemprop="description">
+                DNAstack is looking for an experienced machine learning specialist to join an energetic and growing
+                team of
+                scientists and engineers focused on delivering cutting edge technologies for managing and interpreting
+                genomic
+                datasets. The responsibilities for this position include: development of novel approaches for
+                discovering associations between genetic and patient features, in addition to implementing, testing,
+                and optimizing
+                these algorithms for applied to large datasets stored in a secure cloud environment.
+              </p>
+
+              <p class="font-bold m-t">Required Experience</p>
+              <ul class="list-circle" itemprop="experienceRequirements">
+                <li>Graduate degree in computer science, computer engineering, machine learning, or artificial
+                  intelligence.
+                </li>
+                <li>3+ years of experience with Java, Python, R, MATLAB, or some other computer programming
+                  language.
+                </li>
+                <li>Understanding of key concepts in machine learning (e.g. deep learning, neural networks, supervised
+                  / unsupervised learning, dimensionality reduction).
+                </li>
+                <li>Familiarity with principles of software engineering, and common design patterns.</li>
+                <li>Proficiency using Git for version control.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="m-b" itemscope itemtype="http://schema.org/JobPosting">
+            <div class="h4 text-primary"
+                 itemprop="title"></i><a href="" ng-click="job4visible = !job4visible"><i class="fa"
+                                                                                                 ng-class="job4visible ? 'fa-caret-down' : 'fa-caret-right'"></i>
+              Database Engineer</a></div>
+            <div ng-if="job4visible">
+              <p class="font-bold m-t">Job Description</p>
+
+              <p itemprop="description">
+                DNAstack is looking for an engineer experienced in databases to join the DNAstack team to help build
+                and optimize our storage and querying architecture for very large (petabyte) datasets of genetic
+                variants. The primary technical responsibilities for this position include the development of a fast
+                and scalable database architecture that will perform faceted search quickly over large data (hundreds
+                of columns, billions of rows), and the implementation of a RESTful query API. In addition, you will
+                be involved in architecture meetings and assisting with product specifications.
+              </p>
+
+              <p class="font-bold m-t">Required Experience</p>
+              <ul class="list-circle" itemprop="experienceRequirements">
+                <li>Undergraduate or graduate (preferred) degree in computer science, computer engineering, or
+                  bioinformatics.
+                </li>
+                <li>3+ years of software development experience in Java / Java EE (preferred).</li>
+                <li>2+ years experience designing high performance database schemas using SQL or NoSQL technologies
+                  such as Google BigQuery, CloudSQL, Redshift, or MongoDB.
+                </li>
+                <li>Query planning, optimization, and caching.</li>
+                <li>Familiarity with principles of software engineering, and common design patterns.</li>
+                <li>Proficiency using Git for version control.</li>
+              </ul>
+              <p class="font-bold m-t">Desired Experience</p>
+              <ul class="list-circle" itemprop="experienceRequirements">
+                <li>Google cloud services (cloud storage, compute engine, container engine).</li>
+                <li>Knowledge in any of the following areas would be considered an asset for this position: natural
+                  language processing, statistics, R, machine learning, human genetics or genomics, computational
+                  biology or bioinformatics, preparation of patent applications, mobile application development
+                  (Android or iOS).
+                </li>
+                <li>Experience with visualization libraries (e.g. D3, Processing.js, Raphaël).</li>
+                <li>RESTful API design.</li>
+                <li>Document, faceted search (e.g. Solr, Lucene).</li>
+                <li>Proficient with AngularJS, JavaScript, and HTML5, to assist our UI/UX designers in delivering a
+                  fast and responsive user experience.
+                </li>
+                <li>In addition, this position may occasionally require working with tools written in languages such
+                  as Perl, Python, or C/C++.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </span>
+
+      <div class="h4 font-bold m-t-xl m-b">Internship Positions</div>
+      <p>
+        We love working with bright students from software engineering streams for 4, 8, or 12-month periods. Please
+        contact us at
+        <a href="mailto:internships@dnastack.com">internships@dnastack.com</a> along with a cover letter, CV,
+        unofficial academic transcript if you are interested in an internship position with us.
+      </p>
+
+    </div>
+    <div class="col-xs-12 col-md-4 p-v-xl">
+      <div class="h4 m-t text-primary">How to Apply</div>
+      <p>To apply for any of our open positions, email a CV and cover letter to <a href="mailto:careers@dnastack.com">careers@dnastack.com</a>
+        and include the position name in the subject.</p>
+
+      <div class="m-a">
+        <div class="h4 text-primary">Perks</div>
+        <ul class="list-circle">
+          <li>Competitive Salaries</li>
+          <li>Fitness membership</li>
+          <li>Personal genome analysis</li>
+          <li>Work downtown Toronto, or remotely</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

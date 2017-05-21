@@ -14,6 +14,10 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+      .state('overview', {
+        url: '/overview',
+        templateUrl: 'app/main/overview.html',
+      })
       .state('privacy', {
         url: '/legal/privacy',
         templateUrl: 'app/legal/privacy.html'
@@ -50,17 +54,65 @@
         controllerAs: 'team',
         abstract: true
       })
-      .state('team.mission', {
-        url: '/mission',
-        templateUrl: 'app/team/mission.html',
-        controller: 'MissionController',
-        controllerAs: 'mission'
+      .state('team.node', {
+        url: '/node',
+        templateUrl: 'app/team/node.html',
+        controller: 'NodeController',
+        controllerAs: 'node'
+      })
+      .state('team.chairs', {
+        url: '/chairs',
+        templateUrl: 'app/team/chairs.html',
+        controller: 'ChairsController',
+        controllerAs: 'chairs'
+      })
+      .state('team.info', {
+        url: '/info',
+        templateUrl: 'app/team/info.html',
+        controller: 'InfoController',
+        controllerAs: 'info'
       })
       .state('team.members', {
         url: '/members',
-        templateUrl: 'app/team/members.html',
-        controller: 'MembersController',
-        controllerAs: 'members'
+        templateUrl: 'app/team/partners.html',
+        controller: 'PartnersController',
+        controllerAs: 'partner'
+      })
+      .state('team.coordinator', {
+        url: '/partners',
+        templateUrl: 'app/team/coordinator.html',
+        controller: 'CoordinatorController',
+        controllerAs: 'coordinator'
+      })
+      .state('dev', {
+        url: '/dev',
+        templateUrl: 'app/dev/dev.html',
+        controller: 'DevController',
+        controllerAs: 'dev',
+      })
+      .state('dev.objective', {
+        url: '/objective',
+        templateUrl: 'app/dev/mission.html',
+        controller: 'MissionController',
+        controllerAs: 'mission'
+      })
+      .state('dev.deployment', {
+        url: '/deployment',
+        templateUrl: 'app/dev/deployment.html',
+        controller: 'DeploymentController',
+        controllerAs: 'deployment'
+      })
+      .state('dev.network', {
+        url: '/network',
+        templateUrl: 'app/dev/network.html',
+        // controller: 'NetworkController',
+        // controllerAs: 'network'
+      })
+      .state('dev.tech', {
+        url: '/tech',
+        templateUrl: 'app/dev/tech.html',
+        //controller: 'TechController',
+        //controllerAs: 'tech'
       })
       .state('docs', {
         url: '/docs',
@@ -83,13 +135,18 @@
         url: '/contact',
         templateUrl: 'app/contact/contact.html'
       })
-      .state('team.careers', {
-        url: '/careers',
-        templateUrl: 'app/team/careers.html',
-        controller: 'CareersController',
-        controllerAs: 'careers'
-      });
-
+      .state('faq', {
+        url: '/FAQ',
+        templateUrl: 'app/help/FAQ.html',
+        controller: 'FAQController',
+        controllerAs: 'faq'
+      })
+      .state('info', {
+        url: '/info',
+        templateUrl: 'app/info/event.html',
+        controller: 'EventController',
+        controllerAs: 'event'
+      })
     $urlRouterProvider.otherwise('/');
   }
 

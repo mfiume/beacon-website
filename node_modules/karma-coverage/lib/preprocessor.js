@@ -31,11 +31,13 @@ function createCoveragePreprocessor (logger, helper, basePath, reporters, covera
   var instrumenterOverrides = {}
   var instrumenters = {istanbul: istanbul}
   var includeAllSources = false
+  var useJSExtensionForCoffeeScript = false
 
   if (coverageReporter) {
     instrumenterOverrides = coverageReporter.instrumenter
     instrumenters = extend({istanbul: istanbul}, coverageReporter.instrumenters)
     includeAllSources = coverageReporter.includeAllSources === true
+    useJSExtensionForCoffeeScript = coverageReporter.useJSExtensionForCoffeeScript === true
   }
 
   var sourceCache = globalSourceCache.get(basePath)
@@ -51,7 +53,7 @@ function createCoveragePreprocessor (logger, helper, basePath, reporters, covera
   }, {})
 
   // if coverage reporter is not used, do not preprocess the files
-  if (!_.contains(reporters, 'coverage')) {
+  if (!_.includes(reporters, 'coverage')) {
     return function (content, _, done) {
       done(content)
     }
@@ -60,7 +62,7 @@ function createCoveragePreprocessor (logger, helper, basePath, reporters, covera
   // check instrumenter override requests
   function checkInstrumenters () {
     return _.reduce(instrumenterOverrides, function (acc, literal, pattern) {
-      if (!_.contains(_.keys(instrumenters), String(literal))) {
+      if (!_.includes(_.keys(instrumenters), String(literal))) {
         log.error('Unknown instrumenter: %s', literal)
         return false
       }
@@ -110,34 +112,40 @@ function createCoveragePreprocessor (logger, helper, basePath, reporters, covera
     instrumenter.instrument(content, jsPath, function (err, instrumentedCode) {
       if (err) {
         log.error('%s\n  at %s', err.message, file.originalPath)
-      }
-
-      if (file.sourceMap && instrumenter.lastSourceMap()) {
-        log.debug('Adding source map to instrumented file for "%s".', file.originalPath)
-        var generator = SourceMapGenerator.fromSourceMap(new SourceMapConsumer(instrumenter.lastSourceMap().toString()))
-        generator.applySourceMap(new SourceMapConsumer(file.sourceMap))
-        file.sourceMap = JSON.parse(generator.toString())
-        instrumentedCode += '\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,'
-        instrumentedCode += new Buffer(JSON.stringify(file.sourceMap)).toString('base64') + '\n'
-      }
-
-      // remember the actual immediate instrumented JS for given original path
-      sourceCache[jsPath] = content
-
-      if (includeAllSources) {
-        // reset stateful regex
-        coverageObjRegex.lastIndex = 0
-
-        var coverageObjMatch = coverageObjRegex.exec(instrumentedCode)
-
-        if (coverageObjMatch !== null) {
-          var coverageObj = JSON.parse(coverageObjMatch[0])
-
-          coverageMap.add(coverageObj)
+        done(err.message)
+      } else {
+        if (file.sourceMap && instrumenter.lastSourceMap()) {
+          log.debug('Adding source map to instrumented file for "%s".', file.originalPath)
+          var generator = SourceMapGenerator.fromSourceMap(new SourceMapConsumer(instrumenter.lastSourceMap().toString()))
+          generator.applySourceMap(new SourceMapConsumer(file.sourceMap))
+          file.sourceMap = JSON.parse(generator.toString())
+          instrumentedCode += '\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,'
+          instrumentedCode += new Buffer(JSON.stringify(file.sourceMap)).toString('base64') + '\n'
         }
-      }
 
-      done(instrumentedCode)
+        // remember the actual immediate instrumented JS for given original path
+        sourceCache[jsPath] = content
+
+        if (includeAllSources) {
+          // reset stateful regex
+          coverageObjRegex.lastIndex = 0
+
+          var coverageObjMatch = coverageObjRegex.exec(instrumentedCode)
+
+          if (coverageObjMatch !== null) {
+            var coverageObj = JSON.parse(coverageObjMatch[0])
+
+            coverageMap.add(coverageObj)
+          }
+        }
+
+        // RequireJS expects JavaScript files to end with `.js`
+        if (useJSExtensionForCoffeeScript && instrumenterLiteral === 'ibrik') {
+          file.path = file.path.replace(/\.coffee$/, '.js')
+        }
+
+        done(instrumentedCode)
+      }
     })
   }
 }

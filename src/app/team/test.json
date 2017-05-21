@@ -1,0 +1,10 @@
+{
+    "cities": [
+        {
+            "name": "Stockholm",
+            "latitud": "59",
+            "longitud": "18",
+            "id": "sthlm"
+        }
+    ]
+}

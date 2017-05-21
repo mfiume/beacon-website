@@ -18,7 +18,9 @@
     "ngSmoothScroll": "~2.0.0",
     "angular-vimeo-embed": "^0.1.2",
     "angular-sticky": "angular-sticky-plugin#^0.2.4",
-    "angular-ui-switch": "^0.1.1"
+    "angular-ui-switch": "^0.1.1",
+    "angular-carousel": "^1.0.1",
+    "sotos.angular-slider": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.2"

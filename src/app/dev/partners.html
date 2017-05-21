@@ -1,0 +1,44 @@
+<div class="row bn-hero-white b-b">
+  <div class="mx-width clearfix" id="partners-container">
+    
+
+
+    <div class="col-sm-4 hidden-xs">
+      <div hl-sticky container="partners-container" offset-top="20">
+        <div class="h4"><BR><b>Nodes involved </b><BR></div>
+        <ul class="nav">
+            <li ng-repeat="N in partners.nodes">
+            
+            <a offset="140" href="{{N.url}}" target=_blank> <img  ng-src="{{N.imageSrc}}"alt="Photo of {{N.country}}" itemprop="image" width=48 height=32> {{N.id}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-8 p-v-xl" offset-top="20">
+    <div class="h4"><b>People involved </b></div><BR><BR>
+      <div ng-repeat="member in partners.leader" id="{{member.id}}" class="ds-member m-b-xxl"
+           style="display: flex"
+           itemprop="employee" itemscope itemtype="http://schema.org/Person">
+        <img style="flex: 0 0 150px;" ng-src="{{member.imageSrc}}" class="member-photo hidden-xs"
+             alt="Photo of {{member.name}}"
+             itemprop="image">
+        <div style="flex: 1;" class="m-l-xl">
+          <div>
+            <div class="h2 inline" itemprop="name">{{member.name}}</div>
+          </div>
+          <div class="h4 font-thin text-primary" itemprop="jobTitle">{{member.title}}</div>
+          <div ng-repeat="paragraph in member.description">
+            <p itemprop="description">{{paragraph}}</p>
+          </div>
+          <div>
+            <a ng-if="member.linkedIn" href="{{member.linkedIn}}"><img ng-src="assets/images/linkedin.png" width=6% height=6% target=_blank></a>
+            <img ng-if="member.node" ng-src={{member.node}} width=30 height=20>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

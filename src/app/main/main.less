@@ -23,6 +23,44 @@ body {
   color: @color-body-text;
 }
 
+
+
+table.noborder {
+  border: 0px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table.noborder tr {
+
+}
+
+
+
+
+table.newstable {
+ border: 1px;
+ border-collapse: collapse;
+ padding: 5px;
+}
+
+table.newstable tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table.newstable tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
 a {
 
   cursor: pointer;
@@ -146,7 +184,8 @@ a {
 .carousel-inner > .item img,
 .carousel-inner > .item > a > img {
   display: block;
-  width: 100%;
+  width: 50%;
+  max-width: 400px;
   height: auto;
 }
 
@@ -188,8 +227,19 @@ a {
   color: @color-body-text;
 }
 
+.dn-splash-event {
+  background-image: url('../assets/images/events.jpg');
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: @color-body-text;
+}
+
 .bn-search-panel {
   padding: 50px 15px;
+  background-image: url('../assets/images/network2.jpg');
+  background-size: cover;
+  margin-top:100px;
 }
 
 #ds-logo {
@@ -281,6 +331,7 @@ a {
 .bg-light {
   background-color: @color-gray;
 }
+
 
 .bg-primary {
   background-color: @color-primary;
@@ -536,6 +587,15 @@ a:hover {
       margin-right:auto;
       width: 150px;
       height: 150px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+    }
+     .member-photo-small {
+      margin-left:auto;
+      margin-right:auto;
+      width: 80px;
+      height: 80px;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%;
@@ -823,3 +883,8 @@ a:hover {
     height: 22px;
   }
 }
+
+
+
+
+

@@ -1,0 +1,54 @@
+<div id="ds-contact" class="row dn-content bn-hero-white">
+  
+  <div class="col-xs-12 dn-splash-event b-b p-v-xxl hidden-xs">
+    <div class="p-v-xl"></div>
+  </div>
+
+
+  <div id="ds-press" class="row bn-hero-white">
+   <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12">
+      <BR><BR>
+      <h2 class="h2 p-v-xl"><img src="assets/images/event.png" width=40 heigt=40> Events </h2>
+    </div>
+    <div class="col-xs-12">
+     <div class="row m-t-lg">
+      <table class="newstable" width=80% align=center>
+      <tr><th nowrap> Name </th><th nowrap> Location </th><th nowrap> Date</th><th></th></tr> 
+      <tr ng-repeat="conference in event.conf">
+      <td>{{conference.title}}</td>
+      <td>{{conference.where}}</td>
+      <td nowrap>{{conference.date}} </td>
+      <td><a href={{conference.url}} target="_blank"><img src="assets/images/url.png" width=22 height=22></a></td>
+      </tr>
+      </table>
+     </div>
+    </div>  
+   </div>
+  </div>
+
+
+<div id="ds-press" class="row bn-hero-white">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12">
+      <h2 class="h2 p-v-xl"><img src="assets/images/news.png" width=40 heigt=40>  Recent communications </h2>
+    </div>
+    <div class="col-xs-12">
+      <div class="row m-t-lg">
+        <div class="col-xs-12 col-sm-4" style="margin-bottom: 10px" ng-repeat="story in event.news">
+          <div class="b-a bg-light" style="padding:10px; height:150px;">
+            <a href="{{story.url}}" ng-init="newsLogoHeight='30px'">
+              <div class="text-center m-b" style="height:25px">
+              </div>
+              <div class="font-lg italic m-b-lg text-ellipsize">{{story.title}} <BR><font size=-1> {{story.date}}</font></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

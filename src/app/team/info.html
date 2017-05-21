@@ -1,0 +1,140 @@
+<div id="" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 col-md-8">
+      <div class="p-v-xl text-dark">
+      <TABLE><TR>
+      <TD><img src="assets/images/PeopleNetwork.jpg" width=400 height=200></TD>
+      <TD>
+      <div class="h4 m-b"> The beacon project involves ... </div>
+      <div class="font-thin text-muted m-t-xl">
+           ... <BR>
+           ........ <BR>
+           ...... <BR>
+      </div>
+      </TD>
+      </TR></TABLE>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div hl-sticky offset-top="60" media-query="min-width: 768px">
+  <div class="row bn-hero-gray b-b">
+    <div class="mx-width clearfix">
+      <div class="col-xs-12">
+        <ul class="nav navbar-nav font-thin">
+          <li ng-class="{active: main.activeSection === 'ds-nodes'}">
+            <a href="#" scroll-to="ds-nodes" offset="{{screenWidth <= 768 ? 0 : 60}}"
+               callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+               ng-click="head.navCollapsed = true; main.activeSection = 'ds-nodes';">Elixir nodes</a>
+          </li>
+          <li ng-class="{active: main.activeSection === 'ds-coordinator'}">
+            <a href="#" scroll-to="ds-coordinator" offset="{{screenWidth <= 768 ? 0 : 60}}"
+               callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+               ng-click="head.navCollapsed = true; main.activeSection = 'ds-coordinator';">Coordinator</a>
+          </li>
+          <li ng-class="{active: main.activeSection === 'ds-chairs'}">
+            <a href="#" scroll-to="ds-chairs" offset="{{screenWidth <= 768 ? 0 : 60}}"
+               callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+               ng-click="head.navCollapsed = true; main.activeSection = 'ds-chairs';">Chairs</a>
+          </li>
+          <li ng-class="{active: main.activeSection === 'ds-members'}">
+            <a href="#" scroll-to="ds-members" offset="{{screenWidth <= 768 ? 0 : 60 + 40}}"
+               callback-before="head.setMotion(true, motionState)" callback-after="head.setMotion(false, motionState)"
+               ng-click="head.navCollapsed = true; main.activeSection = 'ds-members';">Members</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="ds-nodes" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 text-center">
+      <h2 class="h2 m-b-xl">ELIXIR nodes</h2>
+    </div>
+     <p class="m-b-xl"> This project involves .....X  nodes ..... which provides ... ressources/nodes/members ....</p>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <ul class="nav">
+            <li ng-repeat="N in info.nodes">
+            <a offset="140" href="{{N.url}}" target=_blank> <img  ng-src="{{N.imageSrc}}"alt="Photo of {{N.country}}" itemprop="image" width=48 height=32> {{N.id}}</a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</div>
+
+
+
+<div id="ds-coordinator" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 text-center">
+      <h2 class="h2 m-b-xl">Coordinator</h2>
+      <p class="m-b-xl">  ..... .....  ... </p>
+      <div class="col-xs-12">
+        <div class="row m-t-lg">
+          <div class="col-xs-12 col-sm-10 ds-member" style="margin-bottom: 10px" ng-repeat="member in info.leader"">
+            <div ng-if="member.iscoordinator" class="" style="padding:10px; height:150px;">
+                 <img ng-if="member.iscoordinator" style="flex: 0 0 150px;" ng-src="{{member.imageSrc}}" class="member-photo-small hidden-xs" alt="Photo of {{member.name}}" itemprop="image">
+                  {{member.name}}  
+                  <img ng-if="member.iscoordinator && member.node" ng-src={{member.node}} width=30 height=20>  
+                  <a ng-if="member.iscoordinator && member.linkedIn" href="{{member.linkedIn}}"><img ng-src="assets/images/linkedin.png" width=6% height=6% target=_blank></a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="ds-chairs" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 text-center">
+      <h2 class="h2 m-b-xl">Chairs</h2>
+      <p class="m-b-xl">  ..... .....  ... </p>
+      <div class="col-xs-12">
+        <div class="row m-t-lg">
+          <div class="col-xs-12 col-sm-10 ds-member" style="margin-bottom: 10px" ng-repeat="member in info.leader"">
+            <div ng-if="member.ischair" class="" style="padding:10px; height:150px;">
+                 <img ng-if="member.ischair" style="flex: 0 0 150px;" ng-src="{{member.imageSrc}}" class="member-photo-small hidden-xs" alt="Photo of {{member.name}}" itemprop="image">
+                  {{member.name}}  
+                  <img ng-if="member.ischair && member.node" ng-src={{member.node}} width=30 height=20>  
+                  <a ng-if="member.ischair && member.linkedIn" href="{{member.linkedIn}}"><img ng-src="assets/images/linkedin.png" width=6% height=6% target=_blank></a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="ds-members" class="row bn-hero-white b-b">
+  <div class="mx-width clearfix p-v-xxl">
+    <div class="col-xs-12 text-center">
+      <h2 class="h2 m-b-xl">Members</h2>
+      <p class="m-b-xl"> This project involves ..... .....  ... </p>
+      <div class="col-xs-12">
+        <div class="row m-t-lg">
+          <div class="col-xs-12 col-sm-4 ds-member" style="margin-bottom: 10px" ng-repeat="member in info.leader"">
+            <div class="" style="padding:10px; height:150px;text-align: left;">
+                 <img style="flex: 0 0 150px;" ng-src="{{member.imageSrc}}" class="member-photo-small hidden-xs" alt="Photo of {{member.name}}" itemprop="image">
+                  {{member.name}}  
+                  <img ng-if="member.node" ng-src={{member.node}} width=30 height=20>  
+                  <a ng-if="member.linkedIn" href="{{member.linkedIn}}"><img ng-src="assets/images/linkedin.png" width=6% height=6% target=_blank></a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

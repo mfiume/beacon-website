@@ -1,0 +1,143 @@
+<div class="row bn-hero-white b-b">
+  <div class="mx-width clearfix">
+    <div class="hidden-sm hidden-xs ">
+
+      <BR><BR><BR><BR>
+      <h2> How to light a Beacon ? </h2>        
+      <BR><BR>
+
+
+      <!-- 1/ COMPONENTS  -->
+      <div class="col-xs-12"> <h2 class="h3 p-v-xl"> 1 - Components </h2></div>
+       Architecture ... claasic .... engine Vs interface
+
+      <TABLE border=0>
+      <TR><TD colspan=3 width=100%><img src="assets/images/backand_frontand2.jpg"></TD></TR>
+      <TR>
+      <TD width=40%> 
+      <H3> Back-End </H3>
+      <li> Java 8 JDK </li>
+      <li> Apache Maven 3 </li>
+      <li> PostgreSQL Server 9.0+ </li>
+      </TD>
+      <TD width=10%></TD>
+      <TD  width=50%> 
+      <H3> Front-End </H3>
+      <li> Node.js </li>
+      <li> AngularJS </li>
+      <li> A web server (i.e. Apache) </li>
+      </TD>
+      </TR>
+      </TABLE>
+      <BR><BR>
+      <img src="assets/images/github.png" width=4% height=4%> https://github.com/elixirhub/human-data-beacon  <BR>
+  
+      <BR><BR><BR>
+
+
+
+      <!-- 2/  DOCKER -->
+      <div class="col-xs-12"> <h2 class="h3 p-v-xl"> 2 - Docker </h2></div>
+        <TABLE border=0>
+        <TR>
+        <TD valign=top>
+        <img src="assets/images/docker.svg" width=100 height=100><BR>
+        Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Developers use Docker to eliminate “works on my machine” problems when collaborating on code with co-workers. <BR><BR>
+        A Docker image of beacon is now available, this image contains :
+        <li> the Elixir Beacon application deployed and running 
+        <li> a PostgreSQL database  (with some sample data).
+        <li> the JAR file with the default configuration
+        <BR><BR>
+        </TD>
+        <TD  width=50%>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" align=center>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" width=200>
+              <div class="item active"><img src="assets/images/docker1.png">A docker containing all components </div>
+              <div class="item"><img src="assets/images/docker2.png">Database exported out of the container</div>
+              <div class="item"><img src="assets/images/docker3.png">Database hosted in a separated docker</div>
+            </div>
+          </div>
+
+        </TD>
+        </TR>
+        </TABLE>
+        <img src="assets/images/github.png" width=4% height=4%> Engine : https://hub.docker.com/r/egacrg/beacon/ <BR>
+        <img src="assets/images/github.png" width=4% height=4%> Web interface : https://github.com/elixir-europe/human-data-beacon-ui <BR>
+
+      <BR><BR><BR>
+
+
+      <!-- 3/ DATA  -->
+      <div class="col-xs-12"> <h2 class="h3 p-v-xl"> 3 - Data </h2></div>
+      <BR><BR>
+      <li>PostgreSQL database schema : https://raw.githubusercontent.com/elixirhub/human-data-beacon/master/elixir_beacon/src/main/resources/META-INF/elixir_beacon_db_schema.sql </li>
+      <li>Data parser script for VCF files :  https://raw.githubusercontent.com/elixirhub/human-data-beacon/master/elixir_beacon/src/main/resources/META-INF/vcf_parser.sh </li>
+  
+       <BR><BR><BR>
+
+
+      <!-- 4/ API  -->
+      <div class="col-xs-12"> <h2 class="h3 p-v-xl"> 4 - API </h2></div>
+      <div>
+      An application programming interface (API) is a set of subroutine definitions, protocols, and tools for building application software. <BR>
+      In general terms, it is a set of clearly defined methods of communication between the software components
+      <BR><BR>
+      <img src="assets/images/github.png" width=4% height=4%>  https://github.com/ga4gh/beacon-team/releases/tag/v0.3.0 <BR>
+      </div>
+      <BR><BR><BR>
+           
+
+      <!-- 5/ List of beacon nodes  -->
+      <div class="col-xs-12"> <h2 class="h3 p-v-xl"> Available beacon nodes </h2></div>
+
+      <u>Reference implementations</u> : <BR>
+      CRG : https://ega.crg.eu/beacon_web/#/ <BR>
+      SANGER :http://www.sanger.ac.uk/sanger/GA4GH_Beacon <BR>
+      <BR><BR>
+
+      <TABLE><TR>
+      <TD><img src="assets/images/nodes_map.png" width=400 height=350></TD>
+      <TD>
+          <div class="row m-t-lg">
+            <div class="col-xs-12 col-sm-4" style="margin-bottom: 10px" ng-repeat="N in deployment.nodes">
+              <div class="b-a bg-light" style="padding:10px; height:150px;">
+                <div class="">
+                  <TABLE class="noborder"><TR>
+                  <TD><a href={{N.url}} target="_blank"><img src={{N.logo}} width=70 height=70></a></TD>
+                  <TD width=50></TD>
+                  <TD> {{N.name}} <BR>({{N.id}}) </TD> 
+                  </TR></TABLE>
+                </div>
+              </div>
+            </div>
+          </div>
+      </TD>
+      </TR></TABLE>
+      </div>
+      <BR><BR><BR><BR><BR><BR>
+
+
+
+      <!-- 6/  EXTRA INFO -->
+      <BR><BR>
+      <HR>
+      <img src="assets/images/video.png" width=3% height=3%> VIDEO
+      <li>https://www.youtube.com/watch?v=jz1PiI8-0kk
+      <BR><BR><BR><BR>  
+              `
+
+
+    </div>
+  </div>
+</div>
+
+
